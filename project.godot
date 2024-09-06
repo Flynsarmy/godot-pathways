@@ -6,38 +6,17 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Spatial",
-"class": "PathwayNetwork",
-"language": "GDScript",
-"path": "res://addons/pathways/classes/PathwayNetwork.gd"
-}, {
-"base": "Spatial",
-"class": "PathwayPiece",
-"language": "GDScript",
-"path": "res://addons/pathways/classes/PathwayPiece.gd"
-}, {
-"base": "Spatial",
-"class": "Pathways",
-"language": "GDScript",
-"path": "res://addons/pathways/classes/Pathways.gd"
-} ]
-_global_script_class_icons={
-"PathwayNetwork": "res://addons/pathways/icons/pathway-network.png",
-"PathwayPiece": "res://addons/pathways/icons/pathway-piece.png",
-"Pathways": "res://addons/pathways/icons/pathways.png"
-}
+config_version=5
 
 [application]
 
 config/name="Plugin: Pathways"
+config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/pathways/plugin.cfg" )
+enabled=PackedStringArray("res://addons/pathways/plugin.cfg")
 
 [importer_defaults]
 
@@ -52,4 +31,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/defaults/default_environment="res://default_env.tres"

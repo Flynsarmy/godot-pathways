@@ -1,4 +1,4 @@
-tool
+@tool
 extends HBoxContainer
 
 # Node references
@@ -16,4 +16,4 @@ func _init() -> void:
 	_clear_network_button.flat = true
 	_clear_network_button.text = "Clear Network"
 	add_child(_clear_network_button)
-	_clear_network_button.connect("pressed", self, "emit_signal", [ "network_clear_requested" ])
+	_clear_network_button.pressed.connect(Callable(self, "emit_signal").bind("network_clear_requested"))
