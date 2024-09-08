@@ -118,51 +118,51 @@ func _get_property_list() -> Array:
 func set_mesh_node(value: NodePath) -> void:
 	mesh_node = value
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_piece_type(value: int) -> void:
 	piece_type = value
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 	notify_property_list_changed()
 
 func set_intersection_type(value: int) -> void:
 	intersection_type = value
 	_update_branches()
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_intersection_branch_length(value: float) -> void:
 	intersection_branch_length = value
 	_update_branches()
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_intersection_branch_radius(value: float) -> void:
 	intersection_branch_radius = value
 	_update_branches()
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_intersection_origin(value: Vector2) -> void:
 	intersection_origin_point = value
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_mesh_axis(value: String) -> void:
 	mesh_axis = value
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_mesh_up_axis(value: String) -> void:
 	mesh_up_axis = value
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 func set_mesh_rotation(value: float) -> void:
 	mesh_rotation_degrees = value
 	_update_mesh()
-	emit_signal("mesh_changed")
+	mesh_changed.emit()
 
 # Public methods
 func has_mesh() -> bool:

@@ -292,7 +292,7 @@ func clear_network() -> void:
 	selected_node = -1
 	baked_curves = []
 
-	emit_signal("curves_changed")
+	curves_changed.emit()
 	notify_property_list_changed()
 	update_gizmos()
 
@@ -830,7 +830,7 @@ func _update_curves() -> void:
 
 	# Return early if there are no nodes on the network and so no point to do anything.
 	if (network_nodes.size() == 0):
-		emit_signal("curves_changed")
+		curves_changed.emit()
 		return
 
 	# Iterate over all available nodes, looking for starting points and building curves from there.
@@ -914,7 +914,7 @@ func _update_curves() -> void:
 		head_id = get_next_head()
 
 	_update_intersections()
-	emit_signal("curves_changed")
+	curves_changed.emit()
 
 func _update_intersections() -> void:
 	intersection_nodes = []
